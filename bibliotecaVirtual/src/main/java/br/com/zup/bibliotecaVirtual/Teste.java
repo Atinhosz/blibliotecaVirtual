@@ -1,12 +1,19 @@
 package br.com.zup.bibliotecaVirtual;
 
+import br.com.zup.bibliotecaVirtual.modelo.Autor;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class Teste {
+    public static void main(String[] args) {
 
-    int numero = 1;
+        Teste teste = new Teste();
+        Autor autor = new Autor("a","b","c");
 
-    int getNumero(){
-        return numero;
+        System.out.println(autor.getDiaDoRegistro());
+
+
     }
-
 
 }
