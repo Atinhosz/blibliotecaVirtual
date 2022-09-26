@@ -2,34 +2,32 @@ package br.com.zup.bibliotecaVirtual.modelo;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.xml.crypto.Data;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
-@Entity
-public class Autor {
+public class Livro {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
-    private String nome;
+    private String titulo;
     @Column(nullable = false)
-    private String email;
+    private String isbn;
     @Column(nullable = false, length = 400)
     private String descricao;
     @Column(nullable = false) @DateTimeFormat(pattern="yyyy/MM/dd HH:mm:ss")
     private LocalDateTime diaDoRegistro = LocalDateTime.now();
 
-    public Autor() {
+    public Livro(){
     }
 
-    public Autor(String nome, String email, String descricao) {
-        this.nome = nome;
-        this.email = email;
+    public Livro(String titulo, String isbn, String descricao) {
+        this.titulo = titulo;
+        this.isbn = isbn;
         this.descricao = descricao;
     }
-
-
 }
